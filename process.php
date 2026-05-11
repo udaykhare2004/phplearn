@@ -47,7 +47,7 @@ if (!empty($errors)) {
     exit;
 }
  
-// ── 3. Connect to MySQL ───────────────────────────────────────
+
 $host = "localhost";
 $user = "root";
 $pass = "";
@@ -59,7 +59,7 @@ if (!$conn) {
     die("<p style='color:red;font-family:Arial;'>Connection failed: " . mysqli_connect_error() . "</p>");
 }
  
-// ── 4. INSERT into students table ─────────────────────────────
+
  
 $sql = "INSERT INTO students (first_name, last_name, email, phone, dob)
         VALUES (?, ?, ?, ?, ?)";

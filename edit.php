@@ -1,13 +1,12 @@
 <?php
-// ── Get ID from URL ───────────────────────────────────────────
+
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 if (!$id) { header("Location: students.php"); exit; }
 
-// ── Connect ───────────────────────────────────────────────────
 $conn = mysqli_connect("localhost", "root", "", "phplearn");
 if (!$conn) die("Connection failed: " . mysqli_connect_error());
 
-// ── Handle form submission (UPDATE) ──────────────────────────
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $first_name = trim($_POST['first_name'] ?? '');
@@ -37,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 
-// ── Fetch existing data to pre-fill the form ──────────────────
+
 $stmt = mysqli_prepare($conn, "SELECT * FROM students WHERE id = ?");
 mysqli_stmt_bind_param($stmt, "i", $id);
 mysqli_stmt_execute($stmt);

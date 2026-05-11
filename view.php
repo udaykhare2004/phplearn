@@ -1,9 +1,9 @@
 <?php
-// ── Get ID from URL ───────────────────────────────────────────
+
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 if (!$id) { header("Location: students.php"); exit; }
 
-// ── Connect & fetch that student ──────────────────────────────
+
 $conn = mysqli_connect("localhost", "root", "", "phplearn");
 if (!$conn) die("Connection failed: " . mysqli_connect_error());
 

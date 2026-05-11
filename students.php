@@ -1,9 +1,8 @@
 <?php
-// ── Connect to DB ─────────────────────────────────────────────
 $conn = mysqli_connect("localhost", "root", "", "phplearn");
 if (!$conn) die("Connection failed: " . mysqli_connect_error());
 
-// ── Fetch all students ────────────────────────────────────────
+
 $result = mysqli_query($conn, "SELECT * FROM students");
 ?>
 <!DOCTYPE html>
