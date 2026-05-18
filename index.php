@@ -1,7 +1,6 @@
 <?php
  echo "Hello";
  echo "<br>";
- echo "MKC";
  echo "<br>";
 
  $name = "ABCD";
